@@ -21,6 +21,7 @@ export interface ToastOptions {
     timeout?:number;
     onAdd?:Function;
     onRemove?:Function;
+    onClick?:Function;
 }
 
 /**
@@ -163,7 +164,8 @@ export class ToastyService {
             type: 'toasty-type-' + type,
             theme: 'toasty-theme-' + theme,
             onAdd: toastyOptions.onAdd && isFunction(toastyOptions.onAdd) ? toastyOptions.onAdd : null,
-            onRemove: toastyOptions.onRemove && isFunction(toastyOptions.onRemove) ? toastyOptions.onRemove : null
+            onRemove: toastyOptions.onRemove && isFunction(toastyOptions.onRemove) ? toastyOptions.onRemove : null,
+            onClick: toastyOptions.onClick && isFunction(toastyOptions.onClick) ? toastyOptions.onClick : null
         };
 
         // If there's a timeout individually or globally,

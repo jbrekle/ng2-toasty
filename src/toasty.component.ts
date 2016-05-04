@@ -15,7 +15,7 @@ import {ToastData} from './toasty.service';
     selector: 'ng2-toast',
     directives: [CORE_DIRECTIVES],
     template: `
-        <div class="toast" [ngClass]="[toast.type, toast.theme]">
+        <div class="toast" [ngClass]="[toast.type, toast.theme] (click)="toast.onClick($event)">
             <div *ngIf="toast.showClose" class="close-button" (click)="close($event)"></div>
             <div *ngIf="toast.title || toast.msg" class="toast-text">
                 <span *ngIf="toast.title" class="toast-title">{{toast.title}}</span>
